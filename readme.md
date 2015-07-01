@@ -34,5 +34,3 @@ See example/testOne.py for a working example
 - Sets the window title to match the widget's window title
 - Closes automatically via onClose signal
 
-## Drawbacks
-- QWidgets work better as a base class than QDialog.  The first QDialog displays correctly but if _that_ dialog creates another dialog it will pop up two windows.  For this reason we suggest using QWidget as a base dialog class.
