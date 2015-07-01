@@ -16,11 +16,15 @@ See example/testOne.py for a working example
 	lx._widgetOptions = options
 ```
 
-2. Launch the script using launchScript:
+2. Launch the widget using launchWidget:
 ```
-	lx.eval('launchScript "{your/script/path.py}"')
+	lx.eval('launchWidget')
 ```
-3. Bonus: If you close your dialog programatically, be sure to emit an ```onClose``` signal so the widget wrapper can close itself as well.  An example of this is included in example/testOne.py
+3. Get a reference to your newly created widget:
+```
+	widgetInstance = lx._widgetInstance
+```
+4. Bonus: If you close your dialog programatically, be sure to emit an ```onClose``` signal so the widget wrapper can close itself as well.  An example of this is included in example/testOne.py
 
 
 ## Benefits

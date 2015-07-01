@@ -1,6 +1,7 @@
 # python
 
 import lx
+import lxu
 import lxifc
 
 from PySide import QtGui
@@ -76,16 +77,22 @@ class WidgetHolder(lxifc.CustomView):
 
 
 
+class LaunchWidget(lxu.command.BasicCommand):
+
+	def basic_Execute(self, msg, flags):
+		# create a new window and set it's view to our custom view
+		lx.eval('layout.create width:600 height:400 class:normal')
+		lx.eval('customview.view pyside.widgetHolder')
+
+
+
+
 def main():
 	# only bless once (we run this as a way of launching windows)
 	try:
 		lx.bless(WidgetHolder, 'pyside.widgetHolder')
+		lx.bless(LaunchWidget, 'launchWidget')
 	except:
 		pass
-
-	# create a new window and set it's view to our custom view
-	lx.eval('layout.create width:600 height:400 class:normal')
-	lx.eval('customview.view pyside.widgetHolder')
-
 
 main()

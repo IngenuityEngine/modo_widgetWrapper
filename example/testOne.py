@@ -58,7 +58,12 @@ def main(**options):
 
 	# widgetWrapper creates whatever widget is set via lx._widget above
 	# note we're using launchScript which allows for runtime blessing
-	lx.eval('launchScript "C:/ie/ark/programs/modo/Kits/modo_widgetWrapper/lxserv/widgetWrapper.py"')
+	lx.eval('launchWidget')
+
+	print 'widget instance:', lx._widgetInstance
+
+
+
 
 if __name__ == '__main__':
 	main(foo='bar')
