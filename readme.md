@@ -10,7 +10,7 @@ A robust widget wrapper for MODO that enables the display of PySide QWidgets and
 ## Use
 See example/testOne.py for a working example
 
-1. In your script's main() function set lx._widget to your QDialog or QWidget and lx._widgetOptions to any arguments that you'd like passed to the widget's ```__init__``` function:
+1. In your script's main() function set lx._widget to your QDialog or QWidget and lx._widgetOptions to any arguments that you'd like passed to the widget's `__init__` function:
 ```
 	lx._widget = Example
 	lx._widgetOptions = options
@@ -20,12 +20,14 @@ See example/testOne.py for a working example
 ```
 	lx.eval('launchWidget')
 ```
+
 3. Get a reference to your newly created widget:
 ```
 	widgetInstance = lx._widgetInstance
 ```
+
 4. We wrap this functionality in a launch command.  It accepts a dialog and arguments and returns a reference to the created instance.  An example is included in examples/launch
-5. Bonus: If you close your dialog programatically, be sure to emit an ```onClose``` signal so the widget wrapper can close itself as well.  An example of this is included in example/testOne.py
+5. Bonus: If you close your dialog programatically, be sure to emit an `onClose` signal so the widget wrapper can close itself as well.  An example of this is included in example/testOne.py
 
 
 ## Benefits
