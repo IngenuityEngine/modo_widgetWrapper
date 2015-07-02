@@ -65,6 +65,8 @@ class WidgetHolder(lxifc.CustomView):
 		dialog.setGeometry(widget.geometry())
 		dialog.move(widget.x(), widget.y())
 		dialog.setWindowTitle(widget.windowTitle())
+		dialog.activateWindow()
+		dialog.raise_()
 
 		# our dialogs all emit an onClose event when closed
 		try:
@@ -72,7 +74,7 @@ class WidgetHolder(lxifc.CustomView):
 		except:
 			pass
 
-		lx._widgetResult = widget
+		lx._widgetInstance = widget
 
 
 
