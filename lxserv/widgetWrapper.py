@@ -60,10 +60,12 @@ class WidgetHolder(lxifc.CustomView):
 
 		# that nesting!
 		dialog = parentWidget.parent().parent().parent()
-		# move the parent dialog and set it's geometry
-		# to match the widget
-		dialog.setGeometry(widget.geometry())
-		dialog.move(widget.x(), widget.y())
+
+		# move and resize the parent dialog to match the widget
+		dialog.resize(widget.geometry().width(),
+						widget.geometry().height())
+		if widget.x() != 0:
+			dialog.move(widget.x(), widget.y())
 		dialog.setWindowTitle(widget.windowTitle())
 		dialog.activateWindow()
 		dialog.raise_()
